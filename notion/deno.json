@@ -1,0 +1,11 @@
+{
+  "name": "@mcp-servers/notion",
+  "version": "0.1.0",
+  "tasks": {
+    "dev": "deno run --allow-env --allow-net --watch main.ts"
+  },
+  "exports": "./server.ts",
+  "imports": {
+    "~/": "./"
+  }
+}

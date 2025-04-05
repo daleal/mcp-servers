@@ -1,0 +1,10 @@
+{
+  "name": "@mcp-servers/shared",
+  "version": "0.1.0",
+  "exports": {
+    "./tools": "./tools.ts"
+  },
+  "imports": {
+    "~/": "./"
+  }
+}
