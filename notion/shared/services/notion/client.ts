@@ -9,12 +9,13 @@ const HEADERS = {
   'Content-Type': 'application/json',
 };
 
-type Params = Record<string, string | number | boolean>;
+type ParamValue = string | number | boolean;
+type Params = Record<string, ParamValue | undefined>;
 
 const buildParams = (params: Params) => {
   const result = new URLSearchParams();
-  for (const [key, value] of Object.entries(params)) {
-    result.append(key, value.toString());
+  for (const [key, value] of Object.entries(params).filter(([_, v]) => v !== undefined)) {
+    result.append(key, (value as ParamValue).toString());
   }
   return result;
 };
